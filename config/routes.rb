@@ -1,4 +1,11 @@
 Rails.application.routes.draw do
+  root to: 'bookmarks#home'
+  
+  get '/auth/github/callback', to: 'sessions#create'
+  get '/auth/facebook/callback', to: 'sessions#create'
+  get '/auth/twitter/callback', to: 'sessions#create'
+
+
   resources :sessions
   resources :tags
   resources :bookmarks
