@@ -28,7 +28,7 @@ gem 'jbuilder', '~> 2.7'
   gem 'omniauth-github'
   gem 'omniauth-twitter'
   gem 'omniauth-facebook'
-# Using gem 'omniauth-rails_csrf_protection' for   inbuilt CSRF protection.
+# Using gem 'omniauth-rails_csrf_protection' for inbuilt CSRF protection.
   gem 'omniauth-rails_csrf_protection', '~> 0.1'
 
 
