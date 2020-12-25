@@ -5,10 +5,10 @@ class ApplicationController < ActionController::Base
 
   private
   def verified_user
-    redirect_to '/' unless user_is_authenticated
+      redirect_to login_path unless !user_is_authenticated?
   end
 
-  def user_is_authenticated
+  def user_is_authenticated?
     !!current_user
   end
 
