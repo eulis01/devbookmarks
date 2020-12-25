@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
-  #skip_before_action :verified_user, only: [:new, :create]
-  before_action :verified_user, only: [:show, :edit, :update, :destroy]
+  skip_before_action :verified_user, only: [:new, :create]
+
 
   # GET /users
   def index
@@ -26,7 +26,7 @@ class UsersController < ApplicationController
     @user = User.create(user_params)
     return redirect_to controller: 'users', action: 'new' unless @user.save
     session[:id] = @user.id
-    redirect_to controller: 'bookmarks', action: 'home'
+    redirect_to controller: 'bookmarks', action: 'index'
   end
 
   # PATCH/PUT /users/1
