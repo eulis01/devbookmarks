@@ -1,8 +1,5 @@
 class BookmarksController < ApplicationController
-  before_action :set_bookmark, only: [:show, :edit, :update, :destroy]
-
-  def home
-  end
+  before_action :set_bookmark, :verified_user, only: [:show, :edit, :update, :destroy]
 
   # GET /bookmarks
   def index
@@ -11,6 +8,7 @@ class BookmarksController < ApplicationController
 
   # GET /bookmarks/1
   def show
+    @bookmark = Bookmark.find_by(id: params[:id])
   end
 
   # GET /bookmarks/new
@@ -30,7 +28,6 @@ class BookmarksController < ApplicationController
       else
         render 'form'
       end
-    end
   end
 
   # PATCH/PUT /bookmarks/1
